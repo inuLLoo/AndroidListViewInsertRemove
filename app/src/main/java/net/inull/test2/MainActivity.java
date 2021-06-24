@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity
         // remove item
         case R.id.buttonRemove:
           arrayList.remove(2);
+          // update listview
           arrayAdapter.notifyDataSetChanged();
           break;
 
