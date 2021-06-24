@@ -27,23 +27,30 @@ public class MainActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    // create button for insert
     buttonInsert = (Button) findViewById(R.id.buttonInsert);
     buttonInsert.setOnClickListener(onClick);
-
+    // create button for remove
     buttonRemove = (Button) findViewById(R.id.buttonRemove);
     buttonRemove.setOnClickListener(onClick);
 
+    // init arrayList
     arrayList = new ArrayList<String>();
     arrayList.add("One");
     arrayList.add("Two");
     arrayList.add("Three");
     arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
 
+    // create listview
     listView = (ListView) findViewById(R.id.listview);
     listView.setAdapter(arrayAdapter);
+    // set item click listener
     listView.setOnItemClickListener(onItemClick);
   }
 
+  /**
+   * item click listener
+   */
   public AdapterView.OnItemClickListener onItemClick = new AdapterView.OnItemClickListener()
   {
     @Override
@@ -53,7 +60,9 @@ public class MainActivity extends AppCompatActivity
     }
   };
 
-
+  /**
+   * view click listener
+   */
   public final View.OnClickListener onClick = new View.OnClickListener()
   {
     @Override
@@ -61,11 +70,13 @@ public class MainActivity extends AppCompatActivity
     {
       switch (view.getId())
       {
+        // insert item
         case R.id.buttonInsert:
           arrayList.add("four");
           arrayAdapter.notifyDataSetChanged();
           break;
 
+        // remove item
         case R.id.buttonRemove:
           arrayList.remove(2);
           arrayAdapter.notifyDataSetChanged();
