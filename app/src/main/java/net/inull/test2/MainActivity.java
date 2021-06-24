@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
     buttonRemove = (Button) findViewById(R.id.buttonRemove);
     buttonRemove.setOnClickListener(onClick);
 
-    // init arrayList
+    // init arrayList one two  three
     arrayList = new ArrayList<String>();
     arrayList.add("One");
     arrayList.add("Two");
